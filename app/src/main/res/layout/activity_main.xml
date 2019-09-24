@@ -3,96 +3,145 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#ffff"
+    android:background="@drawable/gradientbackground"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:weightSum="10">
+
+    <RelativeLayout
+        android:layout_weight="4.0"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/logo_white"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                />
+
+        </LinearLayout>
 
 
-    <View
+
+    </RelativeLayout>
+
+
+    <!--<View
         android:id="@+id/image"
         android:layout_width="385dp"
         android:layout_height="250dp"
         android:layout_alignParentTop="true"
 
-        android:background="@drawable/uni_image1" />
+        android:background="@drawable/uni_image1" />-->
 
-    <TextView
-        android:id="@+id/university_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+    <RelativeLayout
+        android:layout_width="match_parent"
 
-        android:layout_below="@+id/image"
-        android:gravity="center"
-        android:text="@string/university_"
-        android:textAppearance="@style/university_"
+        android:layout_height="0dp"
+        android:layout_weight="6.0">
 
-        />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
 
-    <View
-        android:id="@+id/sign_in_btn1"
-        android:layout_width="114dp"
-        android:layout_height="114dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="26dp"
-       android:layout_gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_below="@+id/university_"
-        android:background="@drawable/google"
-        />
+            app:cardCornerRadius="20dp"
+            app:cardElevation="13dp"
 
-    <TextView
-        android:id="@+id/sign_in_button"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-       android:layout_gravity="center"
-        android:layout_alignParentTop="true"
+            >
 
-        android:text="@string/sign_in_wit"
-        android:textAppearance="@style/sign_in_wit"
-        android:gravity="center_horizontal|top"
-        />
+            <TextView
+                android:id="@+id/university_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/university_"
+                android:textAppearance="@style/university_"
+
+                />
 
 
+        </android.support.v7.widget.CardView>
+            <com.google.android.gms.common.SignInButton
 
-    <!-- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:orientation="vertical"
-   >
+                android:id="@+id/sign_in_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="57dp"
+                android:background="@drawable/common_google_signin_btn_icon_dark">
 
+            </com.google.android.gms.common.SignInButton>
+    </RelativeLayout>
 
+    <!--
+      <View
 
-     <ImageView
-         android:id="@+id/imageView4"
-         android:layout_marginTop="20dp"
-         android:layout_width="100dp"
-         android:layout_height="100dp"
-         android:layout_gravity="center"
-         app:srcCompat="@drawable/logo_white" />
-
-     <ImageView
-         android:id="@+id/imageView3"
-         android:layout_marginTop="20dp"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         app:srcCompat="@drawable/urm_white" />
-
-     <com.google.android.gms.common.SignInButton
-         android:id="@+id/sign_in_button"
-         android:layout_width="250dp"
-         android:layout_gravity="center"
-         android:layout_height="wrap_content"
-         android:background="@drawable/common_google_signin_btn_icon_dark"/>
+         android:background="@drawable/google" />
 
 
 
+<TextView
+     android:id="@+id/sign_in_button"
+     android:layout_width="230dp"
+     android:layout_height="40dp"
+     android:layout_alignParentLeft="true"
+    android:layout_gravity="center"
+     android:layout_alignParentTop="true"
+
+     android:text="@string/sign_in_wit"
+     android:textAppearance="@style/sign_in_wit"
+     android:gravity="center_horizontal|top"
+     />
 
 
- </LinearLayout>-->
+
+  <LinearLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+>
+
+
+
+  <ImageView
+      android:id="@+id/imageView4"
+      android:layout_marginTop="20dp"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_gravity="center"
+      app:srcCompat="@drawable/logo_white" />
+
+  <ImageView
+      android:id="@+id/imageView3"
+      android:layout_marginTop="20dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:srcCompat="@drawable/urm_white" />
+
+  <com.google.android.gms.common.SignInButton
+      android:id="@+id/sign_in_button"
+      android:layout_width="250dp"
+      android:layout_gravity="center"
+      android:layout_height="wrap_content"
+      android:background="@drawable/common_google_signin_btn_icon_dark"/>
+
+
+
+
+
+</LinearLayout>-->
 
 </LinearLayout>

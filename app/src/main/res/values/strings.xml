@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">uni_res</string>
     <string name="web_client_id">xxxxxxxx..place your web client id here</string>
-    <string name="university_">UNIVERSITY RESOURCE MANAGEMENT</string>
+    <string name="university_">UNIVERSITY \n RESOURCE \n MANAGEMENT</string>
     <string name="welcome_">Welcome!!</string>
     <string name="sign_in_wit">SIGN IN WITH GOOGLE</string>
     <string name="schedule">Schedule</string>

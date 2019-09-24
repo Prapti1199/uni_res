@@ -4,34 +4,37 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class Splash extends AppCompatActivity {
+    Animation anim;
+    ImageView imageView;
 
-    private static int SPLASH_TIME_OUT = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
 
-        new Handler().postDelayed(new Runnable() {
-
-            /*
-             * Showing splash screen with a timer. This will be useful when you
-             * want to show case your app logo / company
-             */
+        imageView=(ImageView)findViewById(R.id.imageView2); // Declare an imageView to show the animation.
+        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in); // Create the animation.
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
 
             @Override
-            public void run() {
-                // This method will be executed once the timer is over
-                // Start your app main activity
-                Intent i = new Intent(Splash.this, MainActivity.class);
-                startActivity(i);
+            public void onAnimationEnd(Animation animation) {
+                startActivity(new Intent(Splash.this,MainActivity.class));
+                 }
 
-                // close this activity
-                finish();
+            @Override
+            public void onAnimationRepeat(Animation animation) {
             }
-        }, SPLASH_TIME_OUT);
+        });
+        imageView.startAnimation(anim);
     }
 
 }

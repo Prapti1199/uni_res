@@ -113,7 +113,8 @@ public class MainActivity extends AppCompatActivity  {
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             Toast.makeText(MainActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
-                            addUserData();
+
+                           // addUserData();
                             gotoProfile();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -143,7 +144,7 @@ public class MainActivity extends AppCompatActivity  {
         finish();
     }
 
-    private void addUserData(){
+  /*  private void addUserData(){
         Map<String, Object> user = new HashMap<>();
         user.put("name", mAuth.getCurrentUser().getDisplayName());
 
@@ -162,6 +163,6 @@ public class MainActivity extends AppCompatActivity  {
                     }
                 });
 
-    }
+    }*/
 
 }

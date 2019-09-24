@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "986785659330-8j5e8iv5avrdjng4v99k2rvtrpcu9g00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prapti.uni_res",
+            "certificate_hash": "fd6598d8152093e4ba12049c9cde247c27e356a2"
+          }
+        },
+        {
           "client_id": "986785659330-5ekh81jgr6ilbdfa13b81gtm7rtc3qv0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

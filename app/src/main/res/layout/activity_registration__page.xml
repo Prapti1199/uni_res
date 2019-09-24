@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Registration_Page">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        >
+        <LinearLayout
+            android:background="@drawable/gradientbackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/welcome_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Register Yourself"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:lineSpacingExtra="0sp"
+                android:gravity="center"
+                />
+
+
+
+
+
+        </LinearLayout>
+        <!--insert card view part here-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        >
+        <EditText
+            android:id="@+id/signup_input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Name"/>
+
+        <TextView
+            android:id="@+id/institute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signup_input_name"
+            android:gravity="center_horizontal|top"
+            android:text="Institute"
+            android:textAppearance="@style/department" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_below="@+id/signup_input_name"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/display_result"
+            android:background="@drawable/custom_edit_text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/institute"
+            android:gravity="center_horizontal|top"
+            android:text="Department"
+            android:textAppearance="@style/department" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_below="@+id/spinner"
+            android:layout_marginTop="10dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/display_result1"
+            android:background="@drawable/custom_edit_text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/semester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/department"
+            android:gravity="center_horizontal|top"
+            android:text="Semester"
+            android:textAppearance="@style/department" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_below="@+id/spinner1"
+            android:layout_marginTop="10dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/display_result3"
+            android:background="@drawable/custom_edit_text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/semester"
+            android:gravity="center_horizontal|top"
+            android:text="Division"
+            android:textAppearance="@style/department" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_below="@+id/spinner2"
+            android:layout_marginTop="10dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/display_result4"
+            android:background="@drawable/custom_edit_text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/batch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/div"
+            android:gravity="center_horizontal|top"
+            android:text="Batch"
+            android:textAppearance="@style/department" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_below="@+id/spinner3"
+            android:layout_marginTop="10dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/display_result6"
+            android:background="@drawable/custom_edit_text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

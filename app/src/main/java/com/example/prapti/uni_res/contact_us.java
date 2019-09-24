@@ -33,22 +33,23 @@ public class contact_us extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditTextNumber = (EditText)findViewById(R.id.edit_text_number);
+        EditTextNumber = findViewById(R.id.edit_text_number);
         imageCall = findViewById(R.id.image_call1);
 
-
-
-        imageCall.setOnClickListener(new View.OnClickListener() {
+        EditTextNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makePhoneCall();
+
             }
         });
+
+
 
         EditTextNumber1 = findViewById(R.id.edit_text_number1);
         ImageView imageCall1 = findViewById(R.id.call);
 
-        imageCall1.setOnClickListener(new View.OnClickListener() {
+        EditTextNumber1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makePhoneCall();

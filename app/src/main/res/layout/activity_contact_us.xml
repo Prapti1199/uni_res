@@ -48,11 +48,13 @@ android:orientation="vertical">
     <LinearLayout
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+
+
+        android:layout_alignParentStart="true"
         android:layout_gravity="center"
-
-
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +97,7 @@ android:orientation="vertical">
                 android:id="@+id/image_call1"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/phone" />
+                android:src="@drawable/ic_phone_black_24dp" />
 
             <TextView
                 android:id="@+id/edit_text_number"
@@ -119,7 +121,7 @@ android:orientation="vertical">
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/sit"/>
+                android:src="@drawable/sit" />
 
             <TextView
                 android:id="@+id/Sitting"

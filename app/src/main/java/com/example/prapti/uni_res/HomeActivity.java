@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity   {
         profile_img = findViewById(R.id.profile_img);
         textName = findViewById(R.id.textViewName);
         occupancies = findViewById(R.id.occupancy);
-       // textEmail = findViewById(R.id.textViewEmail);
+       textEmail = findViewById(R.id.textViewEmail);
         logout_btn = findViewById(R.id.logout_btn);
         booknow = findViewById(R.id.book_now);
         contact_us= findViewById(R.id.contact);
@@ -67,7 +67,7 @@ public class HomeActivity extends AppCompatActivity   {
                 .into(profile_img);
 
         textName.setText(user.getDisplayName());
-       // textEmail.setText(user.getEmail());
+       textEmail.setText(user.getEmail());
 
         logout_btn.setOnClickListener(new  View.OnClickListener(){
 
