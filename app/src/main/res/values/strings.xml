@@ -16,5 +16,40 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--<string-array name="institute">
+        <item>CSPIT</item>
+        <item>DEPSTAR</item>
+    </string-array>
+
+    <string-array name="department">
+        <item>CE</item>
+        <item>IT</item>
+    </string-array>
+
+    <string-array name="semester">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="division">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="batch">
+        <item>A</item>
+        <item>B</item>
+        <item>c</item>
+        <item>D</item>
+    </string-array>-->
+
+
 </resources>
 

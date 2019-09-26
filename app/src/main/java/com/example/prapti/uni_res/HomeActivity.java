@@ -101,14 +101,14 @@ public class HomeActivity extends AppCompatActivity   {
         });
 
 
-        contact_us.setOnClickListener(new View.OnClickListener(){
+      /*  contact_us.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, contact_us.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 
@@ -122,6 +122,7 @@ public class HomeActivity extends AppCompatActivity   {
         //if the user is not logged in
         //opening the login activity
         if (mAuth.getCurrentUser() == null) {
+
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }

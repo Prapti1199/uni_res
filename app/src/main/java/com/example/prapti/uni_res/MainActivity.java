@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -36,6 +39,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity  {
+
+    String inst , depart ;
+    Integer div , sem;
+    Button submit;
+    EditText name,id;
+    DatabaseReference reff;
+    Student student1;
 
     private static final int RC_SIGN_IN = 1;
     private static final String TAG = "Uni_Res";
@@ -50,6 +60,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+        student1 = new Student();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -75,7 +86,7 @@ public class MainActivity extends AppCompatActivity  {
         //and take the user to profile activity
         if (mAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, Registration_Page.class));
         }
     }
 
@@ -110,12 +121,33 @@ public class MainActivity extends AppCompatActivity  {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
 
-                            Toast.makeText(MainActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            if(task.getResult().getAdditionalUserInfo().isNewUser()){
+                                FirebaseUser user = mAuth.getCurrentUser();
 
-                           // addUserData();
-                            gotoProfile();
+                                reff = FirebaseDatabase.getInstance().getReference();
+
+                                student1.setName(user.getDisplayName());
+                                student1.setEmail(user.getEmail());
+                                student1.setRegistered(false);
+
+                                reff.child("Student").child("UserId").child(user.getUid()).setValue(student1);
+
+                            }
+
+                           // Toast.makeText(MainActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(MainActivity.this,mAuth.getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this,mAuth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
+
+                           // boolean isNew = task.getResult().getAdditionalUserInfo().isNewUser();
+
+
+
+                          //  Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                             //addUserData();
+                          // gotoProfile();
+                            register();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -137,12 +169,37 @@ public class MainActivity extends AppCompatActivity  {
 //        addUserData();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-    private void gotoProfile(){
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+    private  void register(){
+        Intent intent = new Intent(MainActivity.this, Registration_Page.class);
         startActivity(intent);
         finish();
+
     }
+
+
+//    private void addUserData(){
+//        FirebaseUser user = mAuth.getCurrentUser();
+//      student.setName(user.getDisplayName());
+//        student.setDepartment(depart);
+//        student.setEmail(user.getEmail());
+//        student.setId(id.getText().toString().trim());
+//        student.setInstitute(inst);
+//        student.setDiv(div);
+//        student.setSemester(sem);
+//
+//        reff.child("Student").child("UserId").child(user.getUid()).setValue(student);
+//
+//        Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+//    }
+// /*   private void gotoProfile(){
+//        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+//        finish();
+//    }
+//
+//
 
   /*  private void addUserData(){
         Map<String, Object> user = new HashMap<>();

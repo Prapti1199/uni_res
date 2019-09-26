@@ -24,7 +24,6 @@
         <activity android:name=".Registration" />
         <activity android:name=".choose_Department" />
         <activity android:name=".Book_now" />
-        <activity android:name=".contact_us" />
         <activity android:name=".Registration_Page"></activity>
     </application>
 

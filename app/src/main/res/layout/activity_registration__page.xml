@@ -16,10 +16,10 @@
             android:background="@drawable/gradientbackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/welcome_"
+                android:id="@+id/register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -29,6 +29,15 @@
                 android:lineSpacingExtra="0sp"
                 android:gravity="center"
                 />
+            <ImageView
+                android:id="@+id/logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_logout_black"
+                android:layout_gravity="end"
+                />
+
+
 
 
 
@@ -43,66 +52,71 @@
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center"
         >
-        <EditText
-            android:id="@+id/signup_input_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Name"/>
+
+
+
+            <EditText
+                android:id="@+id/signup_input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"/>
+
+            <EditText
+                android:id="@+id/signup_input_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signup_input_name"
+                android:ems="10"
+                android:hint="ID"/>
 
         <TextView
             android:id="@+id/institute"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/signup_input_name"
+            android:layout_height="30dp"
+            android:layout_below="@+id/signup_input_id"
             android:gravity="center_horizontal|top"
             android:text="Institute"
             android:textAppearance="@style/department" />
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="150dp"
-            android:layout_below="@+id/signup_input_name"
+            android:layout_below="@+id/signup_input_id"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="16dp" />
-        <TextView
-            android:id="@+id/display_result"
-            android:background="@drawable/custom_edit_text_bg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
 
         <TextView
             android:id="@+id/department"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/institute"
-            android:gravity="center_horizontal|top"
+            android:layout_gravity="center"
             android:text="Department"
             android:textAppearance="@style/department" />
 
         <Spinner
             android:id="@+id/spinner1"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="150dp"
             android:layout_below="@+id/spinner"
             android:layout_marginTop="10dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="16dp" />
-        <TextView
-            android:id="@+id/display_result1"
-            android:background="@drawable/custom_edit_text_bg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/semester"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/department"
             android:gravity="center_horizontal|top"
@@ -111,23 +125,18 @@
 
         <Spinner
             android:id="@+id/spinner2"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="150dp"
             android:layout_below="@+id/spinner1"
             android:layout_marginTop="10dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="16dp" />
-        <TextView
-            android:id="@+id/display_result3"
-            android:background="@drawable/custom_edit_text_bg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/div"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/semester"
             android:gravity="center_horizontal|top"
@@ -136,47 +145,25 @@
 
         <Spinner
             android:id="@+id/spinner3"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="150dp"
             android:layout_below="@+id/spinner2"
             android:layout_marginTop="10dp"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="16dp" />
-        <TextView
-            android:id="@+id/display_result4"
-            android:background="@drawable/custom_edit_text_bg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            tools:layout_editor_absoluteY="16dp"
+            />
 
-        <TextView
-            android:id="@+id/batch"
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/div"
-            android:gravity="center_horizontal|top"
-            android:text="Batch"
-            android:textAppearance="@style/department" />
-
-        <Spinner
-            android:id="@+id/spinner4"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
             android:layout_below="@+id/spinner3"
-            android:layout_marginTop="10dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="16dp" />
-        <TextView
-            android:id="@+id/display_result6"
-            android:background="@drawable/custom_edit_text_bg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-
-
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/gradientbackground"
+            android:text="SUBMIT"
+            android:id="@+id/submit"
+            android:textColor="#ffffff"/>
 
 
 

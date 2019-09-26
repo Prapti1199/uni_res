@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -36,8 +37,8 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
     String names2[] = {"301-a","301-b","303-a" };
 
     ArrayAdapter<String> adapter;
-    ArrayAdapter <String> adapter1;
-    ArrayAdapter <String> adapter2;
+   ArrayAdapter <String> adapter1;
+   ArrayAdapter <String> adapter2;
 
     String record = "";
     String record1 = "";
@@ -51,11 +52,11 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
 
         sp = (Spinner)findViewById(R.id.spinner);
         sp1 = (Spinner)findViewById(R.id.spinner1);
-        sp2 = (Spinner) findViewById(R.id.spinner1);
+//        sp2 = (Spinner) findViewById(R.id.spinner1);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
-        adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names1);
-        adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names2);
+       // adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names1);
+      //  adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names2);
 
         display_data = (TextView)findViewById(R.id.display_result);
         display_data1 = (TextView)findViewById(R.id.display_result1);
@@ -63,12 +64,12 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
         home = findViewById(R.id.home);
 
         sp.setAdapter(adapter);
-        sp1.setAdapter(adapter1);
-        sp2.setAdapter(adapter1);
+       // sp1.setAdapter(adapter1);
+       // sp2.setAdapter(adapter1);
 
         date = findViewById(R.id.date);
         time = findViewById(R.id.time);
-        home.setOnClickListener(new View.OnClickListener() {
+       home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Book_now.this,HomeActivity.class);
@@ -97,7 +98,53 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                switch (position)
+                record = names[position];
+
+                Toast.makeText(Book_now.this , "Selected item : "+ record, Toast.LENGTH_SHORT).show();
+
+                if(position == 0){
+                     adapter1  = new  ArrayAdapter<String>(Book_now.this , android.R.layout.simple_spinner_dropdown_item, names1);
+                     sp1.setAdapter(adapter1);
+
+                    sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            record = names1[position];
+
+                            Toast.makeText(Book_now.this , "Selected item : "+ record, Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+
+                }
+
+                if(position == 1){
+                    adapter2  = new  ArrayAdapter<String>(Book_now.this , android.R.layout.simple_spinner_dropdown_item, names2);
+                    sp1.setAdapter(adapter2);
+
+                    sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            record = names2[position];
+
+                            Toast.makeText(Book_now.this , "Selected item : "+ record, Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+
+                }
+
+               /* switch (position)
                 {
                     case 0:
                         record = "CSPIT";
@@ -106,7 +153,7 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
                     case 1:
                         record = "Depstar";
                         break;
-                }
+                }*/
             }
 
             @Override
@@ -115,50 +162,7 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
             }
         });
 
-        sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               if(record == "CSPIT")
-               {
-                   switch (position)
-                    {
-                        case 0:
-                            record1 = "304-a";
-                            break;
 
-                        case 1:
-                            record1 = "304-b";
-                            break;
-
-                        case 2:
-                            record1 = "305-a";
-                            break;
-                    }
-                }
-                else if(record == "Depstar")
-                {
-                    switch (position)
-                    {
-                        case 0:
-                            record1 = "301-a";
-                            break;
-
-                        case 1:
-                            record1 = "301-b";
-                            break;
-
-                        case 2:
-                            record1 = "303-a";
-                            break;
-                    }
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
     public void displayResult(View view)
     {
