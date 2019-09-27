@@ -11,7 +11,7 @@
     <style name="university_">
 
         <item name="android:textSize">
-            36sp
+            30sp
         </item>
         
         <item name="android:textColor">
