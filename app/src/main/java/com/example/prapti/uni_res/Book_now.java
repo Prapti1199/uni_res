@@ -30,7 +30,11 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
 
     TextView display_data;
     TextView display_data1;
-    TextView date , time;
+    TextView date , time , time1;
+    Boolean isFromCLicked;
+
+
+
 
     String names[] = {"CSPIT", "Depstar"};
     String names1[] = {"304-a", "304-b", "305-a",};
@@ -69,7 +73,9 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
 
         date = findViewById(R.id.date);
         time = findViewById(R.id.time);
-       home.setOnClickListener(new View.OnClickListener() {
+       // time1 = findViewById(R.id.time1);
+
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Book_now.this,HomeActivity.class);
@@ -92,6 +98,14 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
 
             }
         });
+//        time1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DialogFragment timePicker1= new TimepickerFragment();
+//                timePicker1.show(getSupportFragmentManager(), "time picker");
+//
+//            }
+//        });
 
 
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -184,15 +198,14 @@ public class Book_now extends AppCompatActivity implements DatePickerDialog.OnDa
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance().format(c.getTime());
 
-        TextView textView = (TextView) findViewById(R.id.date);
         date.setText(currentDateString);
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-        TextView textView = (TextView)findViewById(R.id.middle);
         time.setText( hourOfDay + ":"+ minute);
         //middlename.setText("Hour : "+ hourOfDay + " Minute : "+ minute);
     }
+
 }
 
